@@ -3,6 +3,8 @@ import HeroSlider from "./components/HeroSlider";
 import TourSlider from "./components/TourSlider";
 import ResortsSection from "./components/ResortsSection";
 import Holidays from "./components/Holidays";
+import Partners from "./components/Partners";
+
 function App() {
   return (
     <>
@@ -12,7 +14,9 @@ function App() {
         <TourSlider />
       </div>
       <ResortsSection />
+      <Partners/>
       <Holidays />
+      
 
       
     </>

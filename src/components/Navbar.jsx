@@ -8,7 +8,7 @@ import { IoIosCall } from "react-icons/io";
 function Navbar() {
   return (
     <>
-    <div className="flex items-center justify-between py-4 px-8">
+    <div className="flex items-center justify-between  mt-5 mx-20">
       
       <div>
         <img className="w-36" src={logo} alt="logo" />

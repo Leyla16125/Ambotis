@@ -70,7 +70,7 @@ export default function ResortsSection() {
             <div className="absolute left-0 top-full w-full bg-white border rounded-lg mt-1 shadow z-50">   
               <div
                 onClick={() => { setCity("Москва"); setOpen(false); }}
-                className="p-5 hover:bg-gray-200 cursor-pointer "
+                className="p-2 hover:bg-gray-200 cursor-pointer "
               >
                 Москва
               </div>
