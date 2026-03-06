@@ -1,1 +1,48 @@
 @import "tailwindcss";
+
+.swiper-button-next,
+.swiper-button-prev {
+  width: 60px;
+  height: 60px;
+  background: #e5e7eb;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none !important;
+}
+
+.swiper-button-next svg,
+.swiper-button-prev svg {
+  display: none !important;
+}
+
+.swiper-button-next::before {
+  content: "→";
+  font-size: 22px;
+  color: #6b7280;
+}
+
+.swiper-button-prev::before {
+  content: "←";
+  font-size: 22px;
+  color: #6b7280;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: #d1d5db;
+}
+
+.swiper-pagination-bullet {
+  background: #cbd5e1;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: #1d4ed8;
+}
