@@ -4,9 +4,9 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
-export default function HeroSlider() {
+export default function Slider() {
   return (
-    <div className="mx-20 my-20">
+    <div className="mx-20 my-5">
       <Swiper
         navigation={true}
         modules={[Navigation]}

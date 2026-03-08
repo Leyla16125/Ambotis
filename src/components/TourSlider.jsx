@@ -52,7 +52,7 @@ export default function TourSlider() {
   ];
 
   return (
-    <div className="mx-20">
+    <div className="mx-20 pb-5">
 
       <Swiper
         modules={[Pagination]}
