@@ -5,8 +5,8 @@ import ResortsSection from "./components/ResortsSection";
 import Holidays from "./components/Holidays";
 import Partners from "./components/Partners";
 import Filter from "./components/Filter";
-
-
+import Footer from "./components/Footer";
+import Services from "./components/Services";
 function App() {
   return (
     <>
@@ -18,7 +18,10 @@ function App() {
       </div>
       <ResortsSection />
       <Partners/>
+      <Services />
       <Holidays />
+      <Footer />
+      
 
       
 

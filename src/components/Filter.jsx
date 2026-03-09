@@ -288,7 +288,7 @@ export default function Filter() {
 
 
       <div>
-        <button className="ml-6 px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition w-full h-16 cursor-pointer">
+        <button className="ml-6 px-6 py-3 bg-[#2c5789] text-white rounded-lg hover:bg-[#386ba4] transition w-full h-16 cursor-pointer">
           Найти туры
         </button>
       </div>
