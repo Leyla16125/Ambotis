@@ -102,7 +102,7 @@ function Navbar() {
 
         <a
           href=""
-          className="flex items-center gap-3 border border-[#81899c] px-5 py-2 rounded-md  hover:border-[#2c5789]  hover:text-white transition-colors duration-300"
+          className="flex items-center gap-3 border border-[#81899c] px-5 py-2 rounded-md  hover:border-[#2c5789] transition-colors duration-300"
         >
           <span className="uppercase text-[11px] font-semibold leading-6 text-[#81899c] hover:text-[#2c5789] cursor-pointer">
             Личный кабинет

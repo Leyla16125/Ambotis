@@ -1,4 +1,15 @@
-import { useState } from "react";
+import { useState, useReducer } from "react";
+
+function personReducer(state, action) {
+  switch (action.type) {
+    case "increment":
+      return state + 1;
+    case "decrement":
+      return state > 1 ? state - 1 : state;
+    default:
+      return state;
+  }
+}
 
 export default function Filter() {
   const [open, setOpen] = useState(false);
@@ -6,17 +17,29 @@ export default function Filter() {
 
   const [open2, setOpen2] = useState(false);
   const [country, setCountry] = useState("Куда");
-  
+
   const [open3, setOpen3] = useState(false);
   const [start, setStart] = useState(null);
   const [end, setEnd] = useState(null);
 
   const [open4, setOpen4] = useState(false);
-  const [person, setPerson] = useState(2);
+  const [person, dispatch] = useReducer(personReducer, 2);
 
   const cities = ["Москва", "Санкт-Петербург", "Казань", "Сочи"];
-  const countries = ["Азербайджан","Бахрейн","Вьетнам","Греция","Грузия","Индия","Индонезия","Катар",];
-  const days = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
+  const countries = [
+    "Азербайджан",
+    "Бахрейн",
+    "Вьетнам",
+    "Греция",
+    "Грузия",
+    "Индия",
+    "Индонезия",
+    "Катар",
+  ];
+  const days = [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+    21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+  ];
 
   const [minDate, setMinDate] = useState("2026-03-01");
   const [maxDate, setMaxDate] = useState("2026-04-01");
@@ -187,7 +210,9 @@ export default function Filter() {
 
           <div className="flex justify-between items-center">
             <span className="text-black text-[18px]">
-              {start && end ? `${Math.min(start, end)}-${Math.max(start, end)}` : start || ""}
+              {start && end
+                ? `${Math.min(start, end)}-${Math.max(start, end)}`
+                : start || ""}
             </span>
 
             <span className="text-gray-400 text-sm">
@@ -198,9 +223,7 @@ export default function Filter() {
 
         {open3 && (
           <div className="absolute top-full right-0 mt-2 bg-white border border-gray-200 rounded-xl shadow-lg p-4 w-105">
-            <p className="text-gray-600 mb-3">
-              Доступное количество ночей
-            </p>
+            <p className="text-gray-600 mb-3">Доступное количество ночей</p>
 
             <div className="grid grid-cols-10 gap-2 ">
               {days.map((item) => (
@@ -247,11 +270,9 @@ export default function Filter() {
             Туристы
           </span>
 
-          <span className="text-black text-[18px]">
-            {person} человека
-          </span>
+          <span className="text-black text-[18px]">{person} человека</span>
 
-          <span className="text-gray-400 text-sm">{open4 ? "▲" : "▼"}</span>  
+          <span className="text-gray-400 text-sm">{open4 ? "▲" : "▼"}</span>
         </div>
 
         {open4 && (
@@ -264,7 +285,7 @@ export default function Filter() {
 
               <div className="flex items-center gap-4">
                 <button
-                  onClick={() => person > 1 && setPerson(person - 1)}
+                  onClick={() => dispatch({ type: "decrement" })}
                   className="w-12 h-12 rounded-xl bg-gray-100 text-2xl text-gray-400 hover:bg-gray-200"
                 >
                   -
@@ -275,7 +296,7 @@ export default function Filter() {
                 </span>
 
                 <button
-                  onClick={() => setPerson(person + 1)}
+                  onClick={() => dispatch({ type: "increment" })}
                   className="w-12 h-12 rounded-xl bg-gray-100 text-2xl text-gray-400 hover:bg-gray-200"
                 >
                   +
@@ -286,9 +307,8 @@ export default function Filter() {
         )}
       </div>
 
-
       <div>
-        <button className="ml-6 px-6 py-3 bg-[#2c5789] text-white rounded-lg hover:bg-[#386ba4] transition w-full h-16 cursor-pointer">
+        <button className="ml-4 px-4 py-3 bg-[#2c5789] text-white rounded-lg hover:bg-[#386ba4] transition w-full h-16 cursor-pointer">
           Найти туры
         </button>
       </div>

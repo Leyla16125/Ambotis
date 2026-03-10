@@ -1,12 +1,13 @@
-const partners = [
-  { img: 'https://www.ambotis.ru/workdir/b/00/movenpick.png' },
-  { img: 'https://www.ambotis.ru/workdir/b/00/four-seasons.png' },
-  { img: 'https://www.ambotis.ru/workdir/b/00/emirates.png' },
-  { img: 'https://www.ambotis.ru/workdir/b/00/etihad.png' },
-  { img: 'https://www.ambotis.ru/workdir/b/00/qatar-airways.png' }
-];
+
 
 export default function Partners() {
+  const partners = [
+    { img: 'https://www.ambotis.ru/workdir/b/00/movenpick.png' },
+    { img: 'https://www.ambotis.ru/workdir/b/00/four-seasons.png' },
+    { img: 'https://www.ambotis.ru/workdir/b/00/emirates.png' },
+    { img: 'https://www.ambotis.ru/workdir/b/00/etihad.png' },
+    { img: 'https://www.ambotis.ru/workdir/b/00/qatar-airways.png' }
+  ];
   return (
     <section className="w-full px-20 my-20">
 
