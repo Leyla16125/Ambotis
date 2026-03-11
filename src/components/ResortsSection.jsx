@@ -50,27 +50,27 @@ export default function ResortsSection() {
 
       <div className="flex items-center gap-6 mb-6">
 
-        <div className="flex items-center gap-2 text-lg font-semibold">
+        <div className="flex items-center gap-2 text-[24px] leading-10 font-medium">
           <FaFire className="text-orange-500" />
           Выгодно сегодня
         </div>
 
-        <span className="text-[#81899c] text-sm">
+        <span className="text-[#81899c] leading-6 text-[15px] ml-6">
           Вылет из
         </span>
 
         <div
           onClick={() => setOpen(!open)}
-          className="relative border rounded-lg px-4 py-2 flex items-center gap-2 cursor-pointer"
+          className="relative border border-[#e9ecf1] hover:border-black px-4 py-1 flex items-center gap-2 cursor-pointer w-50"
         >
           {city}
-          <span>{open ? "▲" : "▼"}</span>
+          <span className="pl-20 text-[#e9ecf1] hover:text-black ">{open ? "▲" : "▼"}</span>
 
           {open && (
-            <div className="absolute left-0 top-full w-full bg-white border rounded-lg mt-1 shadow z-50">   
+            <div className="absolute left-0 top-full w-full bg-white border rounded-lg mt-1 shadow z-50 text-black ">   
               <div
                 onClick={() => { setCity("Москва"); setOpen(false); }}
-                className="p-2 hover:bg-gray-200 cursor-pointer "
+                className="p-2  cursor-pointer"
               >
                 Москва
               </div>
@@ -104,17 +104,17 @@ export default function ResortsSection() {
               {"★".repeat(item.stars)}
             </div>
 
-            <h3 className="font-semibold mt-2 text-sm">
+            <h3 className="font-semibold mt-2 hover:text-[#407bc1]">
               {item.name}
             </h3>
 
-            <p className="text-[#81899c] text-sm mt-1">
+            <p className="text-[#81899c] text-sm mt-1 hover:text-[#407bc1]">
               {item.date}
             </p>
 
-            <div className="mt-4 border rounded-lg p-3 flex justify-between items-center">
+            <div className="mt-4 border border-[#e9ecf1]  p-1 flex justify-between items-center">
 
-              <span className="text-blue-600 font-bold text-lg">
+              <span className="text-[#407bc1] hover:text-[#407bc1] font-bold text-lg">
                 {item.price}
               </span>
 

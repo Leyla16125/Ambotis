@@ -53,7 +53,7 @@ export default function Destinations() {
 
                 <img
                     src={destination.img}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover hover:scale-110 transition duration-500"
                 />
 
 

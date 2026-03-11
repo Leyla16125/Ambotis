@@ -11,56 +11,56 @@ function Navbar() {
     <div className="flex items-center justify-between  mt-5 mx-20">
       
       <div>
-        <img className="w-36" src={logo} alt="logo" />
+        <img className="w-38" src={logo} alt="logo" />
       </div>
 
       <div>
-        <div className="flex gap-16">
+        <div className="flex gap-10">
 
-        <ul className="flex flex-col">
-          <li className="text-[#81899c] text-sm">Офис Ambotis</li>
-          <li className="font-semibold cursor-pointer">Москва</li>
+        <ul className="flex flex-col ">
+          <li className="text-[#81899c] text-sm pb-4">Офис Ambotis</li>
+          <li className="font-medium cursor-pointer leading-4 text-[16px]">Москва</li>
         </ul>
 
         <ul className="flex flex-col">
-          <li className="text-[#81899c] text-sm">Агентствам</li>
+          <li className="text-[#81899c] text-sm pb-4">Агентствам</li>
           <li className="hover:text-[#2c5789] font-semibold cursor-pointer">+7 (495) 649-85-99 <span className="text-[#81899c] text-sm">8 (800) 333-41-31</span></li>
         </ul>
 
         <ul className="flex flex-col">
-          <li className="text-[#81899c] text-sm">Частным лицам</li>
-          <li className="hover:text-[#2c5789] font-semibold cursor-pointer">+7 (495) 170-10-40 <span className="text-[#81899c] text-sm">8 (800) 333-00-40</span></li>
+          <li className="text-[#81899c] text-sm pb-4">Частным лицам</li>
+          <li className="hover:text-[#2c5789] font-semibold  cursor-pointer ">+7 (495) 170-10-40 <span className="text-[#81899c] text-sm">8 (800) 333-00-40</span></li>
         </ul>
 
         </div>
 
-        <div className="flex gap-16 text-[#407bc1]"> 
+        <div className="flex gap-10 text-[#407bc1]"> 
           <ul className="flex flex-col">
-            <li className="hover:text-[#2c5789] cursor-pointer">ONLINE</li>
+            <li className="hover:text-[#2c5789] cursor-pointer leading-6 text-[16px] font-medium py-5">ONLINE</li>
           </ul>
 
           <ul className="flex flex-col">
-            <li className="hover:text-[#2c5789] cursor-pointer">Страны</li>
+            <li className="hover:text-[#2c5789] cursor-pointer leading-6 text-[16px] font-medium py-5">Страны</li>
           </ul>
 
           <ul className="flex flex-col">
-            <li className="hover:text-[#2c5789] cursor-pointer">Акции</li>
+            <li className="hover:text-[#2c5789] cursor-pointer leading-6 text-[16px] font-medium py-5">Акции</li>
           </ul>
 
           <ul className="flex flex-col">
-            <li className="hover:text-[#2c5789] cursor-pointer">Авиа</li>
+            <li className="hover:text-[#2c5789] cursor-pointer leading-6 text-[16px] font-medium py-5">Авиа</li>
           </ul>
 
           <ul className="flex flex-col">
-            <li className="hover:text-[#2c5789] cursor-pointer">Турагентствам</li>
+            <li className="hover:text-[#2c5789] cursor-pointer leading-6 text-[16px] font-medium py-5">Турагентствам</li>
           </ul>
 
           <ul className="flex flex-col">
-            <li className="hover:text-[#2c5789] cursor-pointer">Туристам</li>
+            <li className="hover:text-[#2c5789] cursor-pointer leading-6 text-[16px] font-medium py-5">Туристам</li>
           </ul>
 
           <ul className="flex flex-col">
-            <li className="hover:text-[#2c5789]   cursor-pointer">О нас</li>
+            <li className="hover:text-[#2c5789]   cursor-pointer leading-6 text-[16px] font-medium py-5">О нас</li>
           </ul>
         </div>
       </div>

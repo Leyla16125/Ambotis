@@ -32,17 +32,17 @@ function Services() {
   ];
 
   return (
-    <div className="w-full px-20 mt-10">
+    <div className="w-full px-20 mt-10 ">
       <h2 className="text-[26px] font-semibold text-black mb-6">Услуги</h2>
 
-      <div className="flex gap-4 flex-wrap">
+      <div className="flex gap-4 flex-wrap ">
         {services.map((item) => (
           <div
             key={item.id}
-            className="group relative flex-1 min-w-45 h-44 bg-[#eef3fb] rounded-[18px] overflow-hidden cursor-pointer flex flex-col items-center justify-center px-3"
+            className="group relative flex-1 min-w-45 h-60 bg-[#eef3fb] rounded-[18px] overflow-hidden cursor-pointer flex flex-col items-center justify-center px-3"
           >
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="w-0 h-0 rounded-full bg-white opacity-0 transition-all duration-500 ease-out group-hover:w-28 group-hover:h-28 group-hover:opacity-100"></div>
+              <div className="w-0 h-0 rounded-full bg-white opacity-0 transition-all duration-500 ease-out group-hover:w-36 group-hover:h-36 group-hover:opacity-100"></div>
             </div>
 
             <div className="relative z-10 flex flex-col items-center">
