@@ -1,4 +1,4 @@
-import logo from "../assets/logo.png";
+import logo from "../../public/img/logo.png";
 import {FaVk , FaTelegramPlane } from "react-icons/fa";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { IoIosCall } from "react-icons/io";

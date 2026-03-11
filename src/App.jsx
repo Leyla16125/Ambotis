@@ -8,7 +8,9 @@ import Filter from "./components/Filter";
 import Footer from "./components/Footer";
 import Services from "./components/Services";
 import Menu from "./components/Menu";
-
+import Destinations from "./components/Destinations";
+import Reviews from "./components/Reviews";
+import News from "./components/News";
 function App() {
   return (
     <>
@@ -21,8 +23,11 @@ function App() {
         <TourSlider />
       </div>
       <ResortsSection />
-      <Partners/>
+      <Destinations />
+      <News/>
       <Services />
+      <Reviews />
+      <Partners/>
       <Holidays />
       <Footer />
       </div>

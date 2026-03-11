@@ -16,7 +16,7 @@ export default function Slider() {
         <SwiperSlide>
           <div className="relative w-full h-125">
             <img
-              src="src/assets/slider1.jpg"
+              src="../../public/img/slider1.jpg"
               className="w-full h-full object-cover"
             />
           </div>
@@ -25,7 +25,7 @@ export default function Slider() {
         <SwiperSlide>
           <div className="relative w-full h-125">
             <img
-              src="src/assets/slider2.jpg"
+              src="../../public/img/slider2.jpg"
               className="w-full h-full object-cover"
             />
           </div>
@@ -34,7 +34,7 @@ export default function Slider() {
         <SwiperSlide>
           <div className="relative w-full h-125">
             <img
-              src="src/assets/slider3.jpg"
+              src="../../public/img/slider3.jpg"
               className="w-full h-full object-cover "
             />
           </div>

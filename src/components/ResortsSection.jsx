@@ -8,7 +8,7 @@ export default function ResortsSection() {
 
   const resorts = [
     {
-      img: "/src/assets/8527_50598_photo_-1276977399.jpg",
+      img: "../../public/img/8527_50598_photo_-1276977399.jpg",
       country: "Индонезия",
       name: "MAYA SANUR RESORT & SPA",
       date: "16.04.2026 на 13 ночей, BB",
@@ -17,7 +17,7 @@ export default function ResortsSection() {
       stars: 5
     },
     {
-      img: "/src/assets/8489_44724_photo_-384559975.jpg",
+      img: "../../public/img/8489_44724_photo_-384559975.jpg",
       country: "Танзания (Занзибар)",
       name: "KENDWA ROCKS",
       date: "08.06.2026 на 10 ночей, BB",
@@ -26,7 +26,7 @@ export default function ResortsSection() {
       stars: 3
     },
     {
-      img: "/src/assets/13620_104399_photo_576962186.jpg",
+      img: "../../public/img/13620_104399_photo_576962186.jpg",
       country: "Индонезия",
       name: "CANDI BEACH RESORT & SPA",
       date: "02.06.2026 на 12 ночей, BB",
@@ -35,7 +35,7 @@ export default function ResortsSection() {
       stars: 4
     },
     {
-      img: "/src/assets/7875_165477_photo_579874154.jpg",
+      img: "../../public/img/7875_165477_photo_579874154.jpg",
       country: "Маврикий",
       name: "LE MERIDIEN ILE MAURICE",
       date: "05.08.2026 на 11 ночей, HB",

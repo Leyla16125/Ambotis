@@ -8,42 +8,42 @@ export default function TourSlider() {
 
   const tours = [
     {
-      img: "/src/assets/safari-25-s-x2.jpg",
+      img: "../../public/img/safari-25-s-x2.jpg",
       badge: "ЛУЧШЕЕ САФАРИ В АФРИКЕ",
       title: "Танзания и Кения",
       desc: "Пляжный отдых. Комби туры сафари + пляж",
       color: "bg-green-600"
     },
     {
-      img: "/src/assets/mauritiusm-banner.jpg",
+      img: "../../public/img/mauritiusm-banner.jpg",
       badge: "Сезон 2026",
       title: "Маврикий",
       desc: "Гарантированные блоки из Москвы  на 11 ночей",
       color: "bg-orange-500 "
     },
     {
-      img: "/src/assets/maldivesm-1.jpg",
+      img: "../../public/img/maldivesm-1.jpg",
       badge: "СЕЗОН 2026",
       title: "Мальдивы",
       desc: "Скидки до 40% на проживание",
       color: "bg-gray-200"
     },
     {
-      img: "/src/assets/bali2310-m1-1.jpg",
+      img: "../../public/img/bali2310-m1-1.jpg",
       badge: "СЕЗОН 2026",
       title: "Индонезия",
       desc: "Продолжительность 12–14 н.",
       color: "bg-pink-500"
     },
     {
-      img: "/src/assets/cyprus-25-s.jpg",
+      img: "../../public/img/cyprus-25-s.jpg",
       badge: "LOVE Cyprus",
       title: "Кипр",
       desc: "Солнце и море.Культура и религия. Гастрономия. MICE Discovery Cyprus!",
       color: "bg-green-500"
     },
     {
-      img: "/src/assets/mauritiusm-banner.jpg",
+      img: "../../public/img/mauritiusm-banner.jpg",
       badge: "Сезон 2026",
       title: "Маврикий",
       desc: "Гарантированные блоки из Москвы  на 11 ночей",
@@ -64,7 +64,7 @@ export default function TourSlider() {
         {tours.map((tour, index) => (
           <SwiperSlide key={index}>
 
-            <div className="relative h-60 rounded-xl overflow-hidden group">
+            <div className="relative h-60 rounded-xl overflow-hidden group mb-10">
 
               <img
                 src={tour.img}

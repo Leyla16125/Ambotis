@@ -12,17 +12,17 @@ function personReducer(state, action) {
 }
 
 export default function Filter() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(null);
   const [city, setCity] = useState("Москва");
 
-  const [open2, setOpen2] = useState(false);
+  function toggleOpen(menu) {
+    setOpen((prev) => (prev === menu ? null : menu));
+  }
   const [country, setCountry] = useState("Куда");
 
-  const [open3, setOpen3] = useState(false);
   const [start, setStart] = useState(null);
   const [end, setEnd] = useState(null);
 
-  const [open4, setOpen4] = useState(false);
   const [person, dispatch] = useReducer(personReducer, 2);
 
   const cities = ["Москва", "Санкт-Петербург", "Казань", "Сочи"];
@@ -58,19 +58,13 @@ export default function Filter() {
 
   return (
     <div className="flex pt-5 mx-20 sticky top-0 z-100 bg-[#f0f3fe] pb-2">
-      <div className="w-64 relative z-50">
+      <div className="w-56 relative z-50">
         <div
-          onClick={() => {
-            setOpen(!open);
-            setOpen2(false);
-            setOpen3(false);
-            setOpen4(false);
-          }}
+          onClick={() => toggleOpen("city")}
           className={`relative  bg-white cursor-pointer transition px-4 pt-6 pb-3 flex justify-between items-center border
-            ${
-              open
-                ? "border-blue-500 ring-2 ring-blue-200"
-                : "border-gray-300 hover:border-gray-400"
+            ${open === "city"
+              ? "border-blue-500 ring-2 ring-blue-200"
+              : "border-gray-300 hover:border-gray-400"
             }`}
         >
           <span className="absolute top-2 left-4 text-xs text-gray-400">
@@ -79,10 +73,10 @@ export default function Filter() {
 
           <span className="text-black text-[18px]">{city}</span>
 
-          <span className="text-gray-400 text-sm">{open ? "▲" : "▼"}</span>
+          <span className="text-gray-400 text-sm">{open === "city" ? "▲" : "▼"}</span>
         </div>
 
-        {open && (
+        {open === "city" && (
           <div className="absolute top-full left-0 mt-1 w-full bg-white border border-gray-200 rounded-xl shadow overflow-hidden">
             {cities.map((c, index) => (
               <div
@@ -100,19 +94,13 @@ export default function Filter() {
         )}
       </div>
 
-      <div className="w-64 relative z-50">
+      <div className="w-56 relative z-50">
         <div
-          onClick={() => {
-            setOpen2(!open2);
-            setOpen(false);
-            setOpen3(false);
-            setOpen4(false);
-          }}
+          onClick={() => toggleOpen("country")}
           className={`relative  bg-white cursor-pointer transition px-4 pt-6 pb-3 flex justify-between items-center border
-            ${
-              open2
-                ? "border-blue-500 ring-2 ring-blue-200"
-                : "border-gray-300 hover:border-gray-400"
+            ${open === "country"
+              ? "border-blue-500 ring-2 ring-blue-200"
+              : "border-gray-300 hover:border-gray-400"
             }`}
         >
           <span className="absolute top-2 left-4 text-xs text-gray-400">
@@ -121,17 +109,17 @@ export default function Filter() {
 
           <span className="text-black text-[18px]">{country}</span>
 
-          <span className="text-gray-400 text-sm">{open2 ? "▲" : "▼"}</span>
+          <span className="text-gray-400 text-sm">{open === "country" ? "▲" : "▼"}</span>
         </div>
 
-        {open2 && (
+        {open === "country" && (
           <div className="absolute top-full left-0 mt-1 w-full bg-white border border-gray-200 rounded-xl shadow overflow-hidden">
             {countries.map((c, index) => (
               <div
                 key={index}
                 onClick={() => {
                   setCountry(c);
-                  setOpen2(false);
+                  setOpen(false);
                 }}
                 className="px-4 py-3 hover:bg-gray-100 cursor-pointer"
               >
@@ -142,13 +130,12 @@ export default function Filter() {
         )}
       </div>
 
-      <div className="w-84 relative z-50 -ml-px">
+      <div className="w-96 relative z-50 -ml-px">
         <div
-          className={`relative  bg-white transition px-6 pt-6 pb-3 border  ${
-            dateActive
+          className={`relative  bg-white transition px-6 pt-6 pb-3 border  ${dateActive
               ? "border-blue-500 ring-2 ring-blue-200"
               : "border-gray-300 hover:border-gray-400"
-          }`}
+            }`}
         >
           <span className="absolute top-2 left-6 text-xs text-gray-400">
             Период вылета
@@ -161,9 +148,6 @@ export default function Filter() {
               onChange={(e) => setMinDate(e.target.value)}
               onFocus={() => {
                 setOpen(false);
-                setOpen2(false);
-                setOpen3(false);
-                setOpen4(false);
                 setDateActive(true);
               }}
               className="outline-none bg-transparent text-black text-[16px] cursor-pointer"
@@ -178,9 +162,6 @@ export default function Filter() {
               onChange={(e) => setMaxDate(e.target.value)}
               onFocus={() => {
                 setOpen(false);
-                setOpen2(false);
-                setOpen3(false);
-                setOpen4(false);
                 setDateActive(true);
               }}
               className="outline-none bg-transparent text-black text-[16px] cursor-pointer"
@@ -191,17 +172,11 @@ export default function Filter() {
 
       <div className="w-36 relative z-50">
         <div
-          onClick={() => {
-            setOpen3(!open3);
-            setOpen(false);
-            setOpen2(false);
-            setOpen4(false);
-          }}
+          onClick={() => toggleOpen("days")}
           className={`relative  bg-white cursor-pointer transition px-4 pt-6 pb-3 h-16 border
-            ${
-              open3
-                ? "border-blue-500 ring-2 ring-blue-200"
-                : "border-gray-300 hover:border-gray-400"
+            ${open === "days"
+              ? "border-blue-500 ring-2 ring-blue-200"
+              : "border-gray-300 hover:border-gray-400"
             }`}
         >
           <span className="absolute top-2 left-4 text-xs text-gray-400">
@@ -216,12 +191,12 @@ export default function Filter() {
             </span>
 
             <span className="text-gray-400 text-sm">
-              {open3 ? "▲" : "▼"}
+              {open === "days" ? "▲" : "▼"}
             </span>
           </div>
         </div>
 
-        {open3 && (
+        {open === "days" && (
           <div className="absolute top-full right-0 mt-2 bg-white border border-gray-200 rounded-xl shadow-lg p-4 w-105">
             <p className="text-gray-600 mb-3">Доступное количество ночей</p>
 
@@ -231,15 +206,14 @@ export default function Filter() {
                   key={item}
                   onClick={() => handleClick(item)}
                   className={`h-10 w-10 rounded-lg border border-gray-300 
-                    ${
-                      (start !== null &&
-                        end !== null &&
-                        item >= Math.min(start, end) &&
-                        item <= Math.max(start, end)) ||
+                    ${(start !== null &&
+                      end !== null &&
+                      item >= Math.min(start, end) &&
+                      item <= Math.max(start, end)) ||
                       item === start ||
                       item === end
-                        ? "bg-blue-500 text-white"
-                        : "bg-gray-100 hover:bg-gray-200 text-gray-600"
+                      ? "bg-blue-500 text-white"
+                      : "bg-gray-100 hover:bg-gray-200 text-gray-600"
                     }`}
                 >
                   {item}
@@ -253,17 +227,13 @@ export default function Filter() {
       <div className="w-46 relative z-50">
         <div
           onClick={() => {
-            setOpen4(!open4);
-            setOpen(false);
-            setOpen2(false);
-            setOpen3(false);
+            toggleOpen("person");
             setDateActive(false);
           }}
           className={`relative  bg-white cursor-pointer transition px-4 pt-6 pb-3 flex justify-between items-center border
-            ${
-              open4
-                ? "border-blue-500 ring-2 ring-blue-200"
-                : "border-gray-300 hover:border-gray-400"
+            ${open === "person"
+              ? "border-blue-500 ring-2 ring-blue-200"
+              : "border-gray-300 hover:border-gray-400"
             }`}
         >
           <span className="absolute top-2 left-4 text-xs text-gray-400">
@@ -272,10 +242,10 @@ export default function Filter() {
 
           <span className="text-black text-[18px]">{person} человека</span>
 
-          <span className="text-gray-400 text-sm">{open4 ? "▲" : "▼"}</span>
+          <span className="text-gray-400 text-sm">{open === "person" ? "▲" : "▼"}</span>
         </div>
 
-        {open4 && (
+        {open === "person" && (
           <div className="absolute top-full left-0 mt-2 w-66 bg-white border border-gray-200 rounded-xl shadow-lg p-4">
             <div className="flex items-center justify-between">
               <div>

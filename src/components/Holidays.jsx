@@ -5,7 +5,7 @@ export default function Holidays() {
       <div className="relative w-105 h-75">
 
         <img
-          src="src/assets/about.webp"
+          src="../../public/img/about.webp"
           className="absolute left-0 top-0 w-[320px] h-55 object-cover rounded-xl"
         />
       </div>
